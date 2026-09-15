@@ -52,7 +52,25 @@ export default function inicio(){
         //---------------------------
         // BLOCO 2.1 - SEÇÃO JOGOS
         //---------------------------
-        
+
+                <text style={style.secaoTitulo}> Jogos em Destaque</text>
+        {/* Exibe o titulo desta seção, usando o estilo "seçãotitulo"*/}
+        <FlatList
+            data={destaques}
+            //define a fonte de dados da lista - array "destaque"
+            keyExtractor={(item) => item.id}
+            //Função que retorna uma chave unica
+            horizontal 
+            //faz a lista rolar
+            showsVerticalScrollIndicator={false}
+            //oculta a barrinha de rolagem horinzontal, deixando a interface mais limpa 
+            renderItem={({item}) => <GameCard jogo= {item}/>}
+            //Função chamada para cada elemento do array "data"
+
+        />
+        //----------------------
+        //BLOCO 2.2 -Seção "Mais populares"
+        //------------------------
 
         </ScrollView>
     )
